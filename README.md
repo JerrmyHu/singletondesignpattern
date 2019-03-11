@@ -17,6 +17,7 @@
         &nbsp&nbsp&nbsp这种写法是用于创建线程非常多的时候使用，它是非线程安全的，但这种写法有利于对实例的管理，spring中就是使用这种方式注册单例<br>
            
 <h1>序列化式单例</h1>
+&nbsp这种写法是利用反序列化后的对象后重新分配内存（重新创建对象），再重写 readResolve()方法，返回INSTANCE，就可以实现，这种写法非常简洁，但是从到ObjectInputStream-->readOrdinaryObject()-->readResolve()-->invokeReadResolve()中可以看出反序列化式会在invokeReadResolve（）方法中反射调用readResolveMehtod(),在反序列化中会实例化两次，由于重写了readResolve(),新创建的对象没有返回。所以说创建对象的频率越大，内存分配开销就越大，消耗内存
 
 <h1>ThreadLocal线程单例</h1>
 
