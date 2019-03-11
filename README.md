@@ -28,5 +28,5 @@
 <h1>序列化破坏单例</h1>
 &nbsp序列化单例中已经说明
 
-<h1>懒汉式 内部类写法的执行逻辑</hh1>
+<h1>懒汉式 内部类写法的执行逻辑</h1>
 &nbsp当LazyInnerClassSingleton在加载的时候，jvm会优先加载内部类LazyHolder，LazyHolder会先加载，然后在加载LazyInnerClassSingleton，调用LazyInnerClassSingleton中的getInstance（）方法时，内部类LzyHolder中的逻辑才会被执行
