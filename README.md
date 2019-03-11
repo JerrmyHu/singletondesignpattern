@@ -1,1 +1,2 @@
 # singletondesignpattern
+this is singleton
